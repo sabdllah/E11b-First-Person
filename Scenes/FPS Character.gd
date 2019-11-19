@@ -12,7 +12,7 @@ var jump = false
 
 func get_input():
 	jump = false
-	if Input.is_action_just_pressed("jump")
+	if Input.is_action_just_pressed("jump"):
 		jump = true
 	var input_dir = Vector3()
 	if Input.is_action_pressed("move_forward"):
@@ -33,7 +33,7 @@ func _unhandled_input(event):
 		$Pivot.rotation.x = clamp($Pivot.rotation.x, -1.2, 1.2)
 func _physics_process(delta):
 	velocity.y += gravity * delta
-	var desired_velocity = get_input() * max speed
+	var desired_velocity = get_input() * max_speed
 	
 	velocity. x = desired_velocity.x
 	velocity.z = desired_velocity.z
